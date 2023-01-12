@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server.keisuke.one
+  name: server-keisuke-one
 spec:
   selector:
     matchLabels:
-      run: server.keisuke.one
+      run: server-keisuke-one
   replicas: 2
   template:
     metadata:
       labels:
-        run: server.keisuke.one
+        run: server-keisuke-one
     spec:
       containers:
-        - name: server.keisuke.one
+        - name: server-keisuke-one
           image: nginx
           ports:
             - containerPort: 80
