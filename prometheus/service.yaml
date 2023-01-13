@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-server-keisuke-one
+  labels:
+    run: prometheus-server-keisuke-one
+spec:
+  type: NodePort
+  ports:
+    - port: 9090
+      protocol: TCP
+      name: http
+  selector:
+    run: prometheus-server-keisuke-one

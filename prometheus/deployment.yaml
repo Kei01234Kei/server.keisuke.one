@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus-server-keisuke-one
+spec:
+  selector:
+    matchLabels:
+      run: prometheus-server-keisuke-one
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: prometheus-server-keisuke-one
+    spec:
+      containers:
+        - name: prometheus-server-keisuke-one
+          image: prom/prometheus
+          ports:
+            - containerPort: 80
