@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana-server-keisuke-one
+spec:
+  selector:
+    matchLabels:
+      run: grafana-server-keisuke-one
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: grafana-server-keisuke-one
+    spec:
+      containers:
+        - name: grafana-server-keisuke-one
+          image: grafana/grafana
+          ports:
+            - containerPort: 80
