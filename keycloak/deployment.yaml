@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak-server-keisuke-one
+spec:
+  selector:
+    matchLabels:
+      run: keycloak-server-keisuke-one
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: keycloak-server-keisuke-one
+    spec:
+      containers:
+        - name: keycloak-server-keisuke-one
+          image: jboss/keycloak
+          ports:
+            - containerPort: 80
+          env:
+            - name: KEYCLOAK_USER
+              value: "admin"
+            - name: KEYCLOAK_PASSWORD
+              value: "admin"
